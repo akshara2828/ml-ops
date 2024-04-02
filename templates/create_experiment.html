@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Experiment</title>
+</head>
+<body>
+    <h1>Create Experiment</h1>
+    <form action="/run_experiment" method="POST" enctype="multipart/form-data">
+        <label for="hypothesis_id">Select Hypothesis:</label><br>
+        <select id="hypothesis_id" name="hypothesis_id">
+            {% for hypothesis in hypotheses %}
+                    <option value="{{ hypothesis[0] }}">{{ hypothesis[1] }}</option>
+            {% endfor %}
+        </select><br><br>
+        <label for="notebook_file">Upload Notebook:</label><br>
+        <input type="file" id="notebook_file" name="notebook_file" accept=".ipynb"><br><br>
+        <input type="submit" value="Run Experiment">
+    </form>
+</body>
+</html>

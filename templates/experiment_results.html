@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment Results</title>
+</head>
+<body>
+    <h1>Experiment Details</h1>
+    <form action="/save_experiment" method="POST">
+        <label for="experiment">Experiment Name:</label><br>
+        <input type="text" id="experiment" name="experiment" value="{{ experiment }}"><br><br>
+
+        <label for="model_type">Model Type:</label><br>
+        <input type="text" id="model_type" name="model_type" value="{{ model_type }}"><br><br>
+
+        <label for="hyperparameters">Hyperparameters:</label><br>
+        <textarea id="hyperparameters" name="hyperparameters" rows="4" cols="50">{{ hyperparameters }}</textarea><br><br>
+
+        <label for="input_attributes">Input Attributes:</label><br>
+        <textarea id="input_attributes" name="input_attributes" rows="4" cols="50">{{ input_attributes }}</textarea><br><br>
+
+        <label for="target_attributes">Target Attributes:</label><br>
+        <textarea id="target_attributes" name="target_attributes" rows="4" cols="50">{{ target_attributes }}</textarea><br><br>
+
+        <label for="results">Results:</label><br>
+        <textarea id="results" name="results" rows="4" cols="50">{{ results }}</textarea><br><br>
+
+        <input type="hidden" name="hypothesis_id" value="{{ hypothesis_id }}">
+        <input type="hidden" name="notebook_path" value="{{ notebook_path }}">
+
+        <input type="submit" value="Save Experiment">
+    </form>
+    <a href="home.html">
+        <button>Back to Home</button>
+    </a>
+</body>
+</html>

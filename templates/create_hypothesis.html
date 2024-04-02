@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Hypothesis</title>
+</head>
+<body>
+    <h1>Input Hypothesis</h1>
+    <form action="/save_hypothesis" method="POST">
+        <label for="hypothesis">Hypothesis:</label><br>
+        <textarea id="hypothesis" name="hypothesis" rows="4" cols="50" required></textarea><br>
+        <label for="assumptions">Assumptions:</label><br>
+        <textarea id="assumptions" name="assumptions" rows="4" cols="50" required></textarea><br>
+        <label for="results">Results:</label><br>
+        <textarea id="results" name="results" rows="4" cols="50" required></textarea><br><br>
+        <input type="submit" value="Save Hypothesis">
+    </form>
+    <br>
+    <p>or select hypothesis</p>
+    <form action="/create_experiment" method="GET">
+        <input type="submit" value="Select Hypothesis">
+    </form>
+</body>
+</html>

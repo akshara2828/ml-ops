@@ -1,0 +1,21 @@
+<!-- templates/select_model.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Model</title>
+    <!--link rel="stylesheet" type="text/css" href="{{ url_for('static', path='css/select_model.css') }}"-->
+</head>
+<body>
+    <h1>Select a Model</h1>
+    <form method="post" action="/predict_page">
+        <label for="model">Choose a model:</label>
+        <select name="model_name" id="model">
+            {% for model in models %}
+                <option value="{{ model }}">{{ model }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <button type="submit">Select Model</button>
+    </form>
+</body>
+</html>

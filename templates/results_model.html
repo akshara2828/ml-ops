@@ -1,0 +1,18 @@
+<!-- templates/predict_model.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results Model</title>
+</head>
+<body>
+    <h1>Results Model</h1>
+    <p>Model: {{ model_name }}</p>
+    {% for attribute, input_type in input_model.__annotations__.items() %}
+        <label for="{{ attribute }}">{{ attribute }} ({{ input_type.__name__ }}):</label>
+        {% if input_parameters}<p>{{input_parameters[attribute]}}</p>
+        <br>
+    {% endfor %}
+
+    <p>Prediction Result: {{ prediction }}</p>
+</body>
+</html>

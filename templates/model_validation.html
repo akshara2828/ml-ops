@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Validation</title>
+</head>
+<body>
+    <h1>Model Validation</h1>
+    <ul>
+        {% for hypothesis in hypotheses %}
+            <li>{{ hypothesis.hypothesis }}</li>
+            <ul>
+                {% for experiment in hypothesis.experiments %}
+                    <li>
+                        Model Type: {{ experiment.model_type }} <br>
+                        Hyperparameters: {{ experiment.hyperparameters }} <br>
+                        Input Attributes: {{ experiment.input_attributes }} <br>
+                        Target Attributes: {{ experiment.target_attributes }} <br>
+                        Results: {{ experiment.results }} <br>
+                        Notebook Path: {{ experiment.notebook_path }} <br>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    </ul>
+</body>
+</html>

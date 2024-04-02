@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Experiments</title>
+</head>
+<body>
+    <h1>View Experiments</h1>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Hypothesis ID</th>
+                <th>Hypothesis</th>
+                <th>Experiment ID</th>
+                <th>Experiment</th>
+                <th>Model Type</th>
+                <th>Results</th>
+                <th>Notebook Path</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in hypothesis_experiments %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                    <td>{{ row[3] }}</td>
+                    <td>{{ row[4] }}</td>
+                    <td>{{ row[5] }}</td>
+                    <td>{{ row[6] }}</td>
+                    <td>
+                        <form method="post" action="{{ url_for('register_model') }}" enctype="multipart/form-data">
+                            <input type="hidden" name="hypothesis_id" value="{{ row[0] }}"/>
+                            <input type="hidden" name="experiment_id" value="{{ row[2] }}"/>
+                            <input type="file" name="model_file" accept=".pkl,.sav" />
+                            <input type="text" name="model_name" placeholder="Enter Model Name"/>
+                            <button type="submit">Register Model</button>
+                        </form>
+                        
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

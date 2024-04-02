@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Experiment</title>
+</head>
+<body>
+    <h1>Start Experiment for {{ hypothesis }}</h1>
+    <form action="{{ url_for('save_experiment', hypothesis=hypothesis) }}" method="post">
+        <label for="description">Description:</label>
+        <textarea name="description" required></textarea><br>
+
+        <label for="assumption">Assumption:</label>
+        <textarea name="assumption" required></textarea><br>
+
+        <label for="results">Results:</label>
+        <textarea name="results" required></textarea><br>
+
+        <label for="data_description">Data Description:</label>
+        <textarea name="data_description" required></textarea><br>
+
+        <input type="submit" value="Save Experiment">
+    </form>
+</body>
+</html>

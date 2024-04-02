@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Welcome to MLOps Platform</h1>
+    <p>Choose an action:</p>
+    
+    <!-- Button to create a hypothesis -->
+    <form action="create_hypothesis">
+        <input type="submit" value="Create Hypothesis">
+    </form>
+
+    <!-- Button to create an experiment -->
+    <form action="create_experiment">
+        <input type="submit" value="Create Experiment">
+    </form>
+
+    <!-- Button to register a model -->
+    <form action="view_experiments" method="get">
+        <input type="submit" value="Register Model">
+    </form>
+
+    <form action="select_model" method="get">
+        <input type="submit" value="Deploy Model">
+    </form>
+</body>
+</html>

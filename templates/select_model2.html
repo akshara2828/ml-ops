@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Model</title>
+</head>
+<body>
+    <h1>Select Model to Deploy</h1>
+    <form method="post">
+        <label for="model">Select a Model:</label>
+        <select name="model_id" id="model">
+            {% for model in registered_models %}
+                <option value="{{ model[0] }}">{{ model[1] }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Deploy Model</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!-- templates/predict_model.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predict Model</title>
+</head>
+<body>
+    <h1>Predict Model</h1>
+    <p>Model: {{ model_name }}</p>
+    <form method="POST" action="/predict">
+        {% for attribute, input_type in input_model.__annotations__.items() %}
+            <label for="{{ attribute }}">{{ attribute }} ({{ input_type }}):</label>
+            {% if input_parameters%}
+                <p style="display: inline;">{{input_parameters[attribute]}}</p>
+                <br>
+            {%else%}
+                <input type="{{ input_type.__name__ }}" id="{{ attribute }}" name="{{ attribute }}" required>
+                <br>
+            {%endif%}
+        {% endfor %}
+        <input type="hidden" name="model_name" value="{{ model_name }}">
+        {% if not input_parameters%}<button type="submit">Predict</button>
+        {%endif%}
+    </form>
+    <p>Prediction Result: {{ prediction }}</p>
+</body>
+<!--11	143	94	33	146	36.6	0.254	51-->
+</html>
