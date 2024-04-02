@@ -1,0 +1,57 @@
+/* styles.css */
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ecf0f5; /* Light blue background */
+    color: #3498db; /* Techy blue text color */
+}
+
+.container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 100% viewport height */
+}
+
+h1 {
+    color: #3498db; /* Techy blue header color */
+}
+
+form {
+    margin-top: 20px;
+}
+
+/* Select Model Page */
+#model {
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* Predict Model Page */
+input[type="text"],
+input[type="number"] {
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #3498db; /* Techy blue button color */
+    color: #ffffff; /* White button text color */
+    cursor: pointer;
+}
+
+/* Results Model Page */
+input[readonly] {
+    background-color: #ffffff; /* White background for readonly input */
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+}

@@ -99,5 +99,3 @@ async def predict_from_page(request: Request, model_name: str = Form(...)):
         "predict_model.html", {"request": request, "prediction": results, "model_name": model_name, "attributes": model_info["input_attributes"], "input_model": input_model, "input_parameters": input_parameters}
     )
 
-# Add other routes and logic as needed...
-
